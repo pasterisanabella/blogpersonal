@@ -14,39 +14,33 @@
             <div class="navbar-option">
                 <img id="profile-picture" src="./archivos/foto.jpg" />
             </div>
-            <?php>
+            <?php
                 $dbhost = '192.168.77.224';
-                $port = 5432;
-                $dbname='blog-db';
+                $port = '5432';
+                $dbname='blog_db';
                 $dbuser = 'postgres';
                 $dbpass = 'ana123456';
             
                 $dbconn = pg_connect("host=$dbhost port=$port dbname=$dbname user=$dbuser password=$dbpass");
                 if (!$dbconn) {
-                    echo "An error occurred.\n";
+                    echo "Connect: An error occurred.\n";
                     exit;
                 }
             
-                $query = 'SELECT * FROM Alumnos';
+                $query = 'SELECT * FROM "Alumnos";';
                 $result = pg_query($query);
                 if (!$result) {
-                    echo "An error occurred.\n";
+                    echo "Query: An error occurred.\n";
                     exit;
                 }
 
                 $row = pg_fetch_row($result);
-                
-                echo "<div class="content-section-about">
-                    <h3 class="red-text">$row[1]</h3>
-                    <p class="paragraph-text info-text">
-                        $row[2]
-                    </p>
-                    <p class="paragraph-text info-text">
-                        $row[3]
-                    </p>
-                </div>    
-                ";
-            ?>   
+            ?> 
+            <div class="content-section-about">
+                <h3 class="red-text"><?php echo $row[2]; ?></h3>
+                <p class="paragraph-text info-text"><?php echo $row[1]; ?></p>
+                <p class="paragraph-text info-text"><?php echo $row[3]; ?></p>
+            </div>
         </header>
         <div id="body">
             <main id="content">
@@ -58,29 +52,28 @@
                         <ul>
                         <?php
                             $dbhost = '192.168.77.224';
-                            $port = 5432;
-                            $dbname='blog-db';
+                            $port = '5432';
+                            $dbname='blog_db';
                             $dbuser = 'postgres';
                             $dbpass = 'ana123456';
                         
                             $dbconn = pg_connect("host=$dbhost port=$port dbname=$dbname user=$dbuser password=$dbpass");
                             if (!$dbconn) {
-                                echo "An error occurred.\n";
+                                echo "Connect: An error occurred.\n";
                                 exit;
                             }
                         
-                            $query = 'SELECT * FROM Datos WHERE AlumnoId=1';
+                            $query = 'SELECT * FROM "Datos" WHERE "AlumnoId"=1';
                             $result = pg_query($query);
                             if (!$result) {
-                                echo "An error occurred.\n";
+                                echo "Query: An error occurred.\n";
                                 exit;
                             }
                         
                             while ($row = pg_fetch_row($result)) {
-                                echo "<li>$row[1]</li>";
-                                echo "<br/>\n"
+                                echo "<li>$row[1]</li>\n";
                             }
-                        
+          
                             pg_free_result($result);
                             pg_close($dbconn);
                         ?>
