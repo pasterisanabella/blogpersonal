@@ -1,0 +1,111 @@
+body {
+    margin: 0;
+}
+
+#main-container {
+    display: grid;
+    height: 100vh;
+    /* grid-template-rows: 72px auto 2.813rem; */
+    grid-template-columns: 25% auto 2.813rem;
+}
+
+header.navbar {
+    background-color: white;
+    /* display: flex;
+    justify-content: start; */
+    justify-content: center;
+    padding-top: 5px;
+    padding-bottom: 5px;    
+}
+
+#body {
+    display: flex;
+    justify-content: center;
+    background-color: rgb(238, 235, 223);
+}
+
+footer.layout {
+    display: flex;
+    justify-content: space-between;
+    padding-left: 15px;
+    padding-right: 15px;
+    background-color: white;
+    padding-left: 10%; /*Optional*/
+    padding-right: 10%; /*Optional*/
+}
+
+@media screen and (max-width: 850px) {
+
+    header.navbar {
+        background-color: white;
+        display: flex;
+        justify-content: center; /*Not used if there are nav options*/
+        padding-top: 5px;
+        padding-bottom: 5px;
+        padding-left: 0%;
+    }
+    
+    footer.layout {
+        display: flex;
+        justify-content: space-between;
+        padding-left: 15px;
+        padding-right: 15px;
+        background-color: white;
+    }
+}
+
+.navbar-option {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding-left: 10px;
+    padding-right: 18px;
+}
+
+.option-text {
+    font-family: 'Roboto', cursive;
+    font-size: 1.5rem;
+    color: rgb(153,0,51);
+}
+
+.option-text:hover {
+    animation-name: flash-no-borders;
+    animation-duration: 0.5s;
+    cursor: pointer;
+}
+
+a {
+    text-decoration: none;
+}
+
+a.navbar-link {
+    cursor: default
+}
+
+/*BODY*/
+#content {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    width: 75%;
+    padding: 25px 50px 25px 50px;
+    background-color: rgba(10, 10, 10, 0.25);
+}
+
+/*FOOTER*/
+p.info-text {
+    /*margin: 5px 0 10px 0;*/
+    color: rgb(102, 102, 102);
+    font-family: 'Roboto', cursive;
+    font-size: 1rem;
+}
+
+a.info-link {
+    color: rgb(153,0,51);
+    font-family: 'Roboto', cursive;
+}
+
+a.info-link:hover {
+    animation: flash-no-borders 0.5s;
+    cursor: pointer;
+}

@@ -1,0 +1,178 @@
+/*CONTENT*/
+.background-container {
+    width: 100%;
+    background-color: white;
+    padding-left: 25px;
+    padding-right: 25px;
+    margin: 5px;
+}
+
+.content-section
+{ 
+    width: 100%;
+    /*padding-left: 25px;*/
+    /*padding-right: 25px;*/
+    text-align: left;
+    /*margin: 5px;*/
+}
+
+.content-section-about {
+    width: 90%;
+    padding-left: 25px;
+    padding-right: 25px;
+    text-align: center;
+    margin: 5px;
+}
+
+.content-section-background
+{
+   /* background-color: rgba(0, 0, 0, 0.3);*/
+}
+
+.content-section-right
+{
+    text-align: right;
+   /* padding-top: 10px;
+    padding-bottom: 10px;*/
+}
+
+
+#profile-picture {
+    border-radius: 15px;
+    width: 55%;
+    height: auto;
+    margin: 10px 25px 10px 25px;
+}
+
+/*TEXT*/
+h1.section-title-l {
+    color: black; /*rgb(15, 15, 15);*/
+    font-family: 'Roboto', cursive; /* from: 'Special Elite', cursive;*/
+    font-size: 1.75rem;
+}
+
+.paragraph-title {
+    /*color: rgb(125,0,55);*/
+    color: rgb(51, 0, 17);
+    font-family: 'Roboto', cursive;
+}
+
+p.paragraph-text {
+    margin: 20px;
+    color: black;
+    font-family: 'Roboto', cursive;
+    font-size: 1.25rem;
+}
+
+li.paragraph-text {
+    margin: 20px;
+    color: black;
+    font-family: 'Roboto', cursive;
+    font-size: 1.25rem;
+}
+
+p.info-text {
+    margin: 5px;
+}
+
+h3.red-text {
+    max-width: 100%;
+    margin-top: 5px;
+    margin-bottom: 5px;
+    color: rgb(51, 0, 17);
+    /*color: rgb(125,0,55);*/
+    font-family: 'Roboto', cursive;
+    font-size: 1.75rem;
+}
+
+li.paragraph-text {
+    margin-top: 5px;
+    color: black;
+    font-family: 'Roboto', cursive;
+    font-size: 1.25rem;
+}
+
+span.red-paragraph-text {
+    color: rgb(51, 0, 17);
+}
+
+a
+{
+    text-decoration: none;
+    color: rgb(51, 0, 17);
+}
+
+a.paragraph-link
+{
+    font-size: 1.25rem;
+}
+
+a:link
+{
+    color: rgb(51, 0, 17);
+}
+
+a.info-link-big
+{
+    font-size: 1.25rem;
+}
+
+p.info-text-big {
+    font-size: 1.25rem;
+    color: black;
+    font-family: 'Roboto', cursive;
+}
+
+/* without this all links both flash and shake*/
+/*TODO Fix this, gallery is not affected because they dont use a tags yet*/
+a.flash:hover {
+    animation-name: flash-no-borders;
+    animation-duration: 0.5s;
+}
+
+@media screen and (max-width: 1500px) {
+    img.gallery-item {
+        width: 100%;
+        height: auto;
+        margin: 15px;
+        pointer-events: none;
+        box-shadow: 0px 0px 15px rgb(0, 0, 0);
+    }
+}
+
+@media screen and (max-width: 850px) {
+    .thumbnail-common {
+        box-shadow: 0px 0px 15px rgb(0, 0, 0);
+        filter: brightness(0.8);
+    }
+
+    .thumbnail-gallery {
+        display: flex;
+        flex-wrap: wrap;
+        justify-content: center;
+    }
+
+    .thumbnail {
+        object-fit: cover; /*Only if showing limited count*/
+        width: 200px;
+        height: 200px;
+    }
+
+    /*Not kicking in for some reason*/
+    .thumbnail-category {
+        object-fit: cover; /*Only if showing limited count*/
+        width: 200px;
+        height: 200px;
+    }
+
+    .thumbnail-common:hover {
+        animation: none;
+    }
+
+    #profile-picture {
+        /*border-radius: 256px;*/
+        width: 200px; /* Used to be 50% */
+        height: auto;
+        margin: 25px;
+    }
+}

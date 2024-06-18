@@ -1,0 +1,34 @@
+CONTENEDOR APP
+
+apt-get update
+apt-get install php php-pgsql
+apt-get install apache2 libapache2-mod-php
+
+CONTENEDOR DB
+
+Instalar sudo para poder ejecutar ciertos comandos:
+
+    apt install sudo
+
+Actualizar los repositorios del instalador de paquetes e instalar la DB
+
+    apt update
+    apt install postgresql 
+
+Para habilitar las conexiones a la DB se debe editar dos archivos:
+
+    /var/postgresql/13/main/postgresql.conf
+
+        Cambiar listen_address='localhosts' a listen_address='*'
+        para acepatar conexiones de cualquier punto, no solo desde el mismo contenedor
+
+    /var/postgresql/13/main/postgresql.conf
+
+        Agregar la linea 
+            host all all 0.0.0.0/0 md5
+        Para que las conexiones puedan hacerse de cualquier IP con contraseña segura md5
+
+Ahora se le da una contraseña segura al admin de la base de datos PostgreSQL:
+
+    sudo -u postgres psql -> abre la linea de comandos de la base de datos para hacer transacciones
+
